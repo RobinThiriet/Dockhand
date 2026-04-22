@@ -21,6 +21,7 @@ flowchart LR
 - `docker-compose.yaml`: declare le service Dockerhand et ses volumes
 - `data/`: persistance locale de l'application
 - `scripts/backup.sh`: encapsule une sauvegarde complete du volume de donnees
+- `scripts/update.sh`: recupere la derniere image configuree puis relance le service
 - `Makefile`: simplifie les operations frequentes
 
 ## Flux techniques
@@ -29,3 +30,4 @@ flowchart LR
 2. Dockerhand pilote l'environnement local via le socket Docker monte
 3. les donnees applicatives restent persistantes dans `./data`
 4. les sauvegardes empaquettent ce dossier pour faciliter la restauration
+5. l'exposition reseau peut etre limitee a `127.0.0.1` via `DOCKHAND_BIND_IP`

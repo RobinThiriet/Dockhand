@@ -6,7 +6,7 @@ services:
     environment:
       TZ: ${TZ:-Europe/Paris}
     ports:
-      - "${DOCKHAND_PORT:-3001}:3000"
+      - "${DOCKHAND_BIND_IP:-0.0.0.0}:${DOCKHAND_PORT:-3001}:3000"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./data:/app/data

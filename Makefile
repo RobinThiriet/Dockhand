@@ -1,4 +1,4 @@
-.PHONY: preflight up down restart logs backup validate
+.PHONY: preflight up down restart logs backup update ps validate
 
 preflight:
 	./scripts/preflight.sh
@@ -16,8 +16,14 @@ restart:
 logs:
 	docker compose logs -f dockhand
 
+ps:
+	docker compose ps
+
 backup:
 	./scripts/backup.sh
+
+update: preflight
+	./scripts/update.sh
 
 validate:
 	docker compose config >/dev/null

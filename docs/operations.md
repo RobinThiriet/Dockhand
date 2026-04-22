@@ -21,8 +21,10 @@ make up
 make down
 make restart
 make logs
+make ps
 make validate
 make backup
+make update
 ```
 
 ## Sauvegarde
@@ -52,6 +54,22 @@ make validate
 
 ```bash
 make restart
+```
+
+Ou, pour recuperer l'image configuree et recreer automatiquement le service:
+
+```bash
+make update
+```
+
+## Restriction d'exposition reseau
+
+Par defaut, Dockerhand ecoute sur toutes les interfaces de l'hote.
+
+Pour limiter l'acces a la machine locale uniquement, definir dans `.env`:
+
+```bash
+DOCKHAND_BIND_IP=127.0.0.1
 ```
 
 ## Points de vigilance

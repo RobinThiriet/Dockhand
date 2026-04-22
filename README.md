@@ -4,6 +4,7 @@ Depot d'infrastructure pour deployer Dockerhand via Docker Compose, avec une bas
 
 - configuration externalisee via `.env`
 - sauvegardes locales des donnees
+- mise a jour d'image simplifiee
 - validation de configuration
 - documentation d'installation et d'exploitation
 - schema d'architecture
@@ -30,11 +31,14 @@ docker compose logs -f dockhand
 
 Dockerhand sera expose sur `http://localhost:3001` par defaut, ou sur le port defini dans `.env`.
 
+Si tu veux limiter l'exposition reseau a la machine locale, tu peux definir `DOCKHAND_BIND_IP=127.0.0.1` dans `.env`.
+
 ## Structure
 
 - [`docker-compose.yaml`](./docker-compose.yaml): stack Docker Compose
 - [`Makefile`](./Makefile): commandes courantes
 - [`scripts/backup.sh`](./scripts/backup.sh): sauvegarde archivee du dossier `data/`
+- [`scripts/update.sh`](./scripts/update.sh): mise a jour de l'image et recreation du service
 - [`scripts/preflight.sh`](./scripts/preflight.sh): verification avant lancement
 - [`docs/operations.md`](./docs/operations.md): exploitation courante
 - [`docs/architecture.md`](./docs/architecture.md): schema et flux techniques
@@ -55,6 +59,12 @@ Les archives sont creees dans `backups/`.
 
 ```bash
 make validate
+```
+
+## Mise a jour
+
+```bash
+make update
 ```
 
 ## Documentation
