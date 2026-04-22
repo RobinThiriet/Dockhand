@@ -1,0 +1,14 @@
+services:
+  dockhand:
+    image: ${DOCKHAND_IMAGE:-fnsys/dockhand:v1.0.20}
+    container_name: ${DOCKHAND_CONTAINER_NAME:-dockhand}
+    restart: unless-stopped
+    environment:
+      TZ: ${TZ:-Europe/Paris}
+    ports:
+      - "${DOCKHAND_PORT:-3001}:3000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/app/data
+    security_opt:
+      - no-new-privileges:true
