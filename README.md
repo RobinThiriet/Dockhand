@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/readme-hero.png" alt="Dockerhand hero banner">
+  <img src="./assets/dockhand-ui.png" alt="Capture de l'interface Dockhand">
 </p>
 
 <p align="center">
