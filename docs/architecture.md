@@ -4,14 +4,14 @@
 
 ```mermaid
 flowchart LR
-    U[Utilisateur] --> B[Navigateur]
-    B --> P[Port hote 3001]
-    P --> C[Conteneur Dockerhand]
-    C --> D[/var/run/docker.sock]
-    C --> V[data/]
-    V --> DB[(SQLite)]
-    V --> KEY[Cle de chiffrement]
-    V --> REPOS[Repos locaux]
+    U["Utilisateur"] --> B["Navigateur"]
+    B --> P["Port hote 3001"]
+    P --> C["Conteneur Dockerhand"]
+    C --> D["Socket Docker: /var/run/docker.sock"]
+    C --> V["Dossier data/"]
+    V --> DB["Base SQLite"]
+    V --> KEY["Cle de chiffrement"]
+    V --> REPOS["Repos locaux"]
 ```
 
 ## Composants
