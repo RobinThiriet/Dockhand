@@ -5,6 +5,10 @@
 </p>
 
 <p align="center">
+  <img src="./assets/readme-hero.png" alt="Dockerhand hero banner">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
   <img src="https://img.shields.io/badge/Docker_Compose-1D63ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Compose">
   <img src="https://img.shields.io/badge/SQLite-0F80CC?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
