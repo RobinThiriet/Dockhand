@@ -2,4 +2,3 @@ data/
 backups/
 .env
 .DS_Store
-secrets/
