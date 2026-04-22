@@ -1,9 +1,6 @@
-.PHONY: preflight up down restart logs backup update ps validate
+.PHONY: up down restart logs update ps validate
 
-preflight:
-	./scripts/preflight.sh
-
-up: preflight
+up:
 	docker compose up -d
 
 down:
@@ -19,10 +16,7 @@ logs:
 ps:
 	docker compose ps
 
-backup:
-	./scripts/backup.sh
-
-update: preflight
+update:
 	./scripts/update.sh
 
 validate:

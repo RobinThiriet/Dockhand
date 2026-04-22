@@ -12,15 +12,12 @@ flowchart LR
     V --> DB[(SQLite)]
     V --> KEY[Cle de chiffrement]
     V --> REPOS[Repos locaux]
-    S[Script backup] --> V
-    S --> A[(Archives backups/)]
 ```
 
 ## Composants
 
 - `docker-compose.yaml`: declare le service Dockerhand et ses volumes
 - `data/`: persistance locale de l'application
-- `scripts/backup.sh`: encapsule une sauvegarde complete du volume de donnees
 - `scripts/update.sh`: recupere la derniere image configuree puis relance le service
 - `Makefile`: simplifie les operations frequentes
 
@@ -29,5 +26,4 @@ flowchart LR
 1. l'utilisateur accede a Dockerhand via le port publie sur l'hote
 2. Dockerhand pilote l'environnement local via le socket Docker monte
 3. les donnees applicatives restent persistantes dans `./data`
-4. les sauvegardes empaquettent ce dossier pour faciliter la restauration
-5. l'exposition reseau peut etre limitee a `127.0.0.1` via `DOCKHAND_BIND_IP`
+4. l'exposition reseau peut etre limitee a `127.0.0.1` via `DOCKHAND_BIND_IP`

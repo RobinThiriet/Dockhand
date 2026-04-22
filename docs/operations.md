@@ -4,13 +4,13 @@
 
 - Docker et Docker Compose installes
 - acces au socket Docker local `/var/run/docker.sock`
-- espace disque suffisant pour `data/` et `backups/`
+- espace disque suffisant pour `data/`
 
 ## Installation initiale
 
 ```bash
 cp .env.example .env
-mkdir -p data/db data/git-repos backups
+mkdir -p data/db data/git-repos
 docker compose up -d
 ```
 
@@ -23,22 +23,7 @@ make restart
 make logs
 make ps
 make validate
-make backup
 make update
-```
-
-## Sauvegarde
-
-Le script archive l'integralite de `data/` pour conserver:
-
-- la base SQLite
-- la cle de chiffrement
-- les depots clones localement par l'application
-
-Commande:
-
-```bash
-make backup
 ```
 
 ## Mise a jour de version

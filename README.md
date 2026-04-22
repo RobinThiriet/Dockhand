@@ -3,7 +3,6 @@
 Depot d'infrastructure pour deployer Dockerhand via Docker Compose, avec une base propre pour l'exploitation:
 
 - configuration externalisee via `.env`
-- sauvegardes locales des donnees
 - mise a jour d'image simplifiee
 - validation de configuration
 - documentation d'installation et d'exploitation
@@ -37,23 +36,13 @@ Si tu veux limiter l'exposition reseau a la machine locale, tu peux definir `DOC
 
 - [`docker-compose.yaml`](./docker-compose.yaml): stack Docker Compose
 - [`Makefile`](./Makefile): commandes courantes
-- [`scripts/backup.sh`](./scripts/backup.sh): sauvegarde archivee du dossier `data/`
 - [`scripts/update.sh`](./scripts/update.sh): mise a jour de l'image et recreation du service
-- [`scripts/preflight.sh`](./scripts/preflight.sh): verification avant lancement
 - [`docs/operations.md`](./docs/operations.md): exploitation courante
 - [`docs/architecture.md`](./docs/architecture.md): schema et flux techniques
 
 ## Donnees sensibles
 
 Le dossier `data/` contient la base SQLite et la cle de chiffrement. Il est ignore par git et ne doit pas etre pousse.
-
-## Sauvegardes
-
-```bash
-make backup
-```
-
-Les archives sont creees dans `backups/`.
 
 ## Validation
 
